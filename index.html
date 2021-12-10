@@ -7,7 +7,7 @@
 <meta name="description" content="">
 <meta name="page_type" content="np-template-header-footer-from-plugin">
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
 <script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
 <script>
@@ -20,11 +20,12 @@
 */
 var config = {
     fields: {
-        "Contact": "#name-30a4", // Name of a contact, registering to the event
-        "Contact.Email": "#email-cd2c", // Contact's email
-        "Contact.Account": "#address-5b62" // Contact's account
-    },
-    landingId: "91273ead-0c5d-4ef1-bf9d-48c6b6170c05",
+        "Name": "#name-30a4", // Name of a visitor, submitting the page
+        "Email": "#email-cd2c", // Visitor's email
+        "Company": "#address-5b62"
+    }
+  
+    landingId: "7921d5bc-1095-4d94-95f0-a4ae7a1cd558",
     serviceUrl: "https://109919-crm-bundle.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
     redirectUrl: ""
 };
@@ -40,9 +41,9 @@ function createObject() {
 * The function below inits landing page using URL parameters.
 */
 function initLanding() {
-    landing.initLanding(config)
+    landing.initLanding(config);
 }
-jQuery(document).ready(initLanding)
+jQuery(document).ready(initLanding);
 </script>
   
 <title>Contact</title>
