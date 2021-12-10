@@ -6,6 +6,45 @@
 <meta name="keywords" content="Ready to talk?">
 <meta name="description" content="">
 <meta name="page_type" content="np-template-header-footer-from-plugin">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
+<script>
+
+/**
+* Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
+* You can use #id or any other CSS selector that will define the input field explicitly.
+* Example: "Email": "#MyEmailField".
+* If you don't have a field from the list below placed on your landing, leave the placeholder or remove the line.
+*/
+var config = {
+    fields: {
+        "Contact": "#name-30a4", // Name of a contact, registering to the event
+        "Contact.Email": "#email-cd2c", // Contact's email
+        "Contact.Account": "#address-5b62" // Contact's account
+    },
+    landingId: "91273ead-0c5d-4ef1-bf9d-48c6b6170c05",
+    serviceUrl: "https://109919-crm-bundle.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+    redirectUrl: ""
+};
+/**
+* The function below creates a object from the submitted data.
+* Bind this function call to the "onSubmit" event of the form or any other elements events.
+* Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+*/
+function createObject() {
+    landing.createObjectFromLanding(config);
+}
+/**
+* The function below inits landing page using URL parameters.
+*/
+function initLanding() {
+    landing.initLanding(config)
+}
+jQuery(document).ready(initLanding)
+</script>
+  
 <title>Contact</title>
 <link rel="stylesheet" href="nicepage.css" media="screen">
 <link rel="stylesheet" href="Contact.css" media="screen">
@@ -32,7 +71,7 @@
 <img class="u-align-center u-image u-image-default u-image-2" src="images/LeseRDV1.png" alt="" data-image-width="315" data-image-height="144">
 <div class="u-form u-form-1">
 
-<form action="scripts/form-carousel_e7fe.php" method="POST" class="u-clearfix u-form-spacing-7 u-form-vertical u-inner-form" style="padding: 0px;" source="customphp" name="form">
+<form method="POST" class="u-clearfix u-form-spacing-7 u-form-vertical u-inner-form" style="padding: 0px;" source="customphp" name="form"onSubmit="createObject(); return false">
 <div class="u-form-group u-form-name u-form-group-1">
 <label for="name-30a4" class="u-form-control-hidden u-label">Name</label>
 <input type="text" placeholder="Nom" id="name-30a4" name="Nom" class="u-border-2 u-border-black u-border-no-left u-border-no-right u-border-no-top u-input u-input-rectangle u-white u-input-1" required="">
